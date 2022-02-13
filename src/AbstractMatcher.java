@@ -4,7 +4,7 @@ import java.util.*;
 
 public abstract class AbstractMatcher {
 
-    protected File[] fileList = new File("sample_text").listFiles( );
+    protected File[] fileList = new File("sample_text").listFiles();
 
     protected HashMap<File, Integer> countMap = new HashMap<>();
 
@@ -15,7 +15,7 @@ public abstract class AbstractMatcher {
     protected ArrayList<String> getTokens(File file) throws FileNotFoundException {
         Scanner s = new Scanner(file);
         ArrayList<String> tokenList = new ArrayList<>();
-        while(s.hasNext()){
+        while (s.hasNext()) {
             tokenList.add(s.next());
         }
 
@@ -24,18 +24,18 @@ public abstract class AbstractMatcher {
         return tokenList;
     }
 
-    public void printResults(){
-        System.out.println( "Results: " );
+    public void printResults() {
+        System.out.println("Results: ");
         sortCountMap();
-        for( Map.Entry<File, Integer> set : countMap.entrySet()){
-            System.out.println( set.getKey().getName( ) + " - " + set.getValue() + " matches" );
+        for (Map.Entry<File, Integer> set : countMap.entrySet()) {
+            System.out.println(set.getKey().getName() + " - " + set.getValue() + " matches");
         }
 
-        System.out.println( "Elapsed Time: " + timeElapsed );
+        System.out.println("Elapsed Time: " + timeElapsed);
     }
 
-    private void sortCountMap(){
-        List<Map.Entry<File, Integer> > list
+    private void sortCountMap() {
+        List<Map.Entry<File, Integer>> list
                 = new LinkedList<>(
                 countMap.entrySet());
 

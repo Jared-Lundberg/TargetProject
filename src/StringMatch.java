@@ -8,10 +8,10 @@ public class StringMatch extends AbstractMatcher {
     public void findMatches(String searchToken) throws FileNotFoundException {
         int matches = 0;
         long startTime = System.currentTimeMillis();
-        for( File file: fileList ){
+        for (File file : fileList) {
             ArrayList<String> tokens = getTokens(file);
-            for(String token: tokens){
-                if( searchToken.equals(token)){
+            for (String token : tokens) {
+                if (searchToken.equals(token)) {
                     matches++;
                 }
             }

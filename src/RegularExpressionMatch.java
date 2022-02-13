@@ -10,11 +10,11 @@ public class RegularExpressionMatch extends AbstractMatcher {
         int matches = 0;
         long startTime = System.currentTimeMillis();
         Pattern pattern = Pattern.compile(searchToken);
-        for( File file: fileList ){
+        for (File file : fileList) {
             ArrayList<String> tokens = getTokens(file);
-            for(String token: tokens){
+            for (String token : tokens) {
                 Matcher matcher = pattern.matcher(token);
-                if(matcher.find()){
+                if (matcher.find()) {
                     matches++;
                 }
             }
